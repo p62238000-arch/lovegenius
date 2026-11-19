@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">恋爱军师</string>
+    <string name="accessibility_label">恋爱军师·键盘助手</string>
+    <string name="accessibility_desc">用于读取聊天输入框中的文字并回填建议回复。只在你点击悬浮球后工作，不上传无关内容。</string>
+</resources>

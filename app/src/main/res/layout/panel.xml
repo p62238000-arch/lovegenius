@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/panelRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_panel"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <!-- 顶栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="💗 恋爱军师"
+            android:textColor="#222222"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="免费版"
+            android:textColor="#FF5C8A"
+            android:textSize="11sp" />
+
+        <ImageView
+            android:id="@+id/btnClose"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:background="@drawable/bg_chip"
+            android:contentDescription="关闭"
+            android:padding="5dp"
+            android:src="@drawable/ic_close"
+            android:tint="#666666" />
+    </LinearLayout>
+
+    <!-- 三个 Tab -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tabReply"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_chip_selector"
+            android:gravity="center"
+            android:text="帮你回"
+            android:textColor="#FF5C8A"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tabSay"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_chip_selector"
+            android:gravity="center"
+            android:text="帮你说"
+            android:textColor="#666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tabBook"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_chip_selector"
+            android:gravity="center"
+            android:text="话术宝典"
+            android:textColor="#666666"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- 关系阶段 + 风格：并排两行压缩高度 -->
+    <HorizontalScrollView
+        android:id="@+id/scrollStages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="阶段"
+                android:textColor="#888888"
+                android:textSize="10sp" />
+
+            <LinearLayout
+                android:id="@+id/tabStages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:orientation="horizontal" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/scrollStyles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="风格"
+                android:textColor="#888888"
+                android:textSize="10sp" />
+
+            <LinearLayout
+                android:id="@+id/tabStyles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:orientation="horizontal" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- 话术宝典分类（仅 Tab3 可见） -->
+    <HorizontalScrollView
+        android:id="@+id/scrollBookCats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="2dp"
+        android:scrollbars="none"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/tabBookCats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <!-- 输入区 -->
+    <EditText
+        android:id="@+id/etInput"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_input"
+        android:gravity="top|start"
+        android:hint="读到的对方原话 / 你的意图…"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:maxLines="2"
+        android:padding="7dp"
+        android:textColor="#222222"
+        android:textColorHint="#AAAAAA"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btnRead"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_ghost"
+            android:gravity="center"
+            android:text="读取输入框"
+            android:textColor="#FF5C8A"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/btnGen"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1.4"
+            android:background="@drawable/bg_btn_primary"
+            android:gravity="center"
+            android:text="✨ 生成回复"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="#999999"
+        android:textSize="11sp"
+        android:visibility="gone" />
+
+    <!-- 结果卡片区 -->
+    <ScrollView
+        android:id="@+id/scrollResults"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="6dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:id="@+id/listResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:text="内容由AI生成"
+        android:textColor="#B0B0B0"
+        android:textSize="9sp" />
+</LinearLayout>
